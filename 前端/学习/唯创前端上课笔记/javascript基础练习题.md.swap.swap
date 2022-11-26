@@ -1,0 +1,353 @@
+## 一:判断题
+
+1. 对✔️
+2. 错✔️
+3. 错✔️
+4. 错✔️
+5. 错✔️//var定义的全局变量不可以删除，不加的可以删除
+6. 错✔️
+7. 错✔️
+8. 错✔️
+9. 错✔️
+10. 错✔️
+11. 对✔️
+12. 错？？
+13. 错
+14. 对
+15. 对
+16. 错
+17. 错
+18. 错
+
+## 二：单项选择
+
+1. B
+2. B
+3. D✔️//-是减法运算符，两个运算符不管什么类型都会进行隐式转换，不能转换则为NaN
+4. B
+5. D
+6. D
+7. D
+8. B
+9. B✖️ (C)//选C
+10. D✖️(B)//选B,getDay();方法获取星期号
+11. D
+12. B
+13. B
+14. C
+15. A✖️ (D)//创建数组有new Array，new Array(5),new Array("hello","ni","wo");三种，没有new Array[10];
+16. A
+17. C
+18. D
+19. A
+20. B??✖️(C)prototype在类上，函数上，_proto_在对象上
+21. B✖️(C)后面的会覆盖前面的
+22. B//instanceof检测对象是否是类的实例
+23. B✖️//C
+
+    ```javascript
+    function fun1(x) {
+        if(x>2){
+            return (fun1(x-1)+fun1(x-2));
+        }else{
+            return 1;
+        }
+    }
+    console.log(fun1(10));//55
+    /*
+    10
+    9 8
+    8 7 7 6
+    7 6 6 5 6 5 5 4
+    6 5 5 4 5 4 4 3 5 4 4 3 4 3 3 2
+    */
+    ```
+24. B//函数名.length得到函数形参的个数
+25. A
+26. C//闭包不可以被垃圾回收机制清理
+27. C
+28. C
+29. D
+30. D
+31. B//浮点数计算误差✖️ ✖️
+32. B??
+33. C✖️ (B)，选B，\D是非数字
+34. B
+35. D
+36. A
+37. C??
+38. D
+39. B
+40. B
+41. A??
+42. 暂时不会
+43. 暂时不会
+44. 暂时不会
+45. D
+46. A
+47. C
+48. B
+49. B
+50. C
+51. D
+
+### 三：多项选择题
+
+1. A D
+2. D??
+3. CD[for...in与for...of区别](https://blog.csdn.net/smlljet/article/details/91523163)
+4. BD✖️(A,B,C)//*，-，Number();转换成数字,+不能转换成数字
+5. ABCD
+6. CD✖️(B,D)//数组里有map和filter，没有split是字符串的方法
+7. ABCD✖️(ABC)
+8. BCD//严格模式很早出现
+9. BC✖️(BCD)//match，search，replace
+10. AC✖️(ABCD)
+11. 暂时不会
+12. CD✖️(ABD)
+
+## 四：编程
+
+1. ```javascript
+   var y=Math.random();
+   console.log(Math.max(x,y));
+   ```
+2. ```javascript
+   var today = new Date();   //获取当天日期
+   var year = today.getFullYear();   //获取当天年份
+   if(year%4===0&&year%100!==0||year%400===0){
+       consoloe.log("yes");
+   }
+
+   ```
+3. ```javascript
+   var input=prompt("请输入年龄");
+   if(input<14){
+       console.log("儿童");
+   }else if(){
+       ...
+   }
+   ```
+4. ```javascript
+   var input=prompt("请输入星期");
+   switch(input){
+       case 0:...
+   }
+   ```
+5. ```javascript
+   function jie(num){
+       if(num<=0)return 1;
+       return num*jie(num-1);
+   }
+   console(jie(10));
+   ```
+6. ```javascript
+   var res=0;
+   function jiehe(num){
+       if(num<=0)return 1;
+       res+=num*jiehe(num-1);
+       return res;
+   }
+   console.log(jiehe(10));
+   ```
+7. ```javascript
+   for(var i=1;i<=5;i++){
+       for(var j=1;j<=i;j++){
+           console.log(j+" ");
+       }
+       console.log("\n");
+   }
+   ```
+8. ````javascript
+   for(var i=1;i<=5;i++){
+       for(var j=1;j<=5-i;j++){
+           console.log(" ");
+       }
+       for(var j=1;j<=2*i-1;j++){
+           if(j%2==1)console.log("*");
+           else{console.log(" ");}
+       }
+       console.log("\n");
+   }
+   ````
+9. ```javascript
+   for(var i=100;i<=999;i++){
+      if(i%4===2&&i%7===3&&i%9===5)console.log(i);
+   }
+   ```
+10. ```javascript
+    for (let i = 1000; i < 9999; i++) {
+        if(i%13===0&&i%10===(i%100/10+i%1000/100)){
+            coonsole.log(i+" ");
+        }
+    }
+    ```
+11. ```javascript
+    var x=promot();
+    console.log(4*x*x+3*x+2);
+    ```
+12. ```javascript
+    for (let i = 1; i <= 1000; i++) {
+        if(i%3==0&&i%5==0&i%7==0){
+            count++;
+            console.log(i+" ");
+        }
+        if(count%6==0)console.log("\n");
+    }
+    ```
+13. ```javascript
+    function condition(num){
+        if(num==2||3)return true;
+        for (let i = 0; i <= Math.sqrt(num); i++) {
+            if(num%1==0)return false;
+        }
+        return true;
+    }
+    var count=0;
+    for (let i = 100; i < 1000; i++) {
+        if(condition(i)){
+            count++;
+            console.log(i+" ");
+            if(count%6==0)console.log("\n");
+        }
+    }
+    ```
+14. ```javascript
+    function factorial(num){
+        var res=1;
+        while(num){
+            res*=num--;
+        }
+        return res;
+    }
+    console.log(factorial(12)-factorial(10));
+    ```
+15. ```javascript
+    var num=prompt();
+    for (let i = 1; i <= num; i++) {
+        for (let j = 0; j <num-i; i++) {
+            console.log(" ");
+        }
+        for (let j = 1; j <= 2*i-1; i++) {
+            if(j%2==1)console.log("*");
+            else{console.log(" ");}
+        }
+    }
+    ```
+16. ```javascript
+    var n=prompt();
+    var one=1,two=1,res;
+    for (let i = 0; i < n-2; i++) {
+        res=one+two;
+        one=two;
+        two=res;
+    }
+    console.log(res);
+    ```
+17. ```javascript
+    function res(n){
+        var result=0;
+        for (let i = 1; i <= n; i++) {
+            result+=1/((2*i-1)*Math.pow(-1,i+1));
+        }
+        console.log(result*4+" ");
+    }
+    res(100);
+    res(1000);
+    res(10000);
+    ```
+18. ```javascript
+    var count=0;
+    for (let i = 0; i < 1000; i++) {
+        var arr=[];
+        for (let i = 0; i < 3; i++) {
+            arr.push(Math.ceil(Math.random()*9))
+        }
+        if(arr.indexOf(8)!=-1)count++;
+    }
+    console.log(count/1000);
+    ```
+19. ```javascript
+    var x=promot();
+    console.log(x*x);
+    console.log(Math.sqrt(x));
+    console.log(Math.exp(x));
+    ```
+20. ```javascript
+    Math.floor(Math.random()*101);
+    ```
+21. ```javascript
+    var string=`现在是${year}年${mon}月${min}分${sec}秒`;
+    var year;
+    var mon;
+    var min;
+    var sec;
+    function now(){
+        var t=new Date();
+        year=t.getFullYear();
+        mon=t.getMonth();
+        min=t.getMinutes();
+        sec=t.getSeconds();
+    }
+    setInterval(now,1000);
+    ```
+22. ```javascript
+    function coll(str){
+        var res="";
+        for (let i = 0; i < str.length; i++) {
+            if(str.charAt(i)>='0'&&str.charAt(i)<=9)res+=str.charAt(i);
+        }
+        return res;
+    }
+    ```
+23. ```javascript
+    function merge(str1,str2){
+        var res="";
+        var len=str1.length<str2.length?str1.length:str2.length;
+        for(let i=0;i<len;i++){
+            res+=str1.charAt(i);
+            res+=str2.charAt(i);
+        }
+        if(str1.length<str2.length){
+            res+=str2.substring(len);
+        }else if(str1.length>str2.length){
+            res+=str1.substring(len);;
+        }
+        return res;
+    }
+    ```
+24. ```javascript
+    var scores=[],res=0;
+    for(let i=0;i<7;i++){
+        var sco=prompt();
+        scores.push(sco);
+        res+=sco;
+        if(sco<60)console.log(sco+" ");
+    }
+    console.log(res/7);
+    ```
+25. ```javascript
+    var res=[];
+    function feibonacci(num){
+        var result=feibonacci(num-1)+feibonacci(num-2);
+        res.push(result);
+        if(num>2)return result;
+        return 1;
+    }
+    var count=0;
+    for(var i=res.length-1;i>=0;i++){
+        count++;
+        console.log(res[i]+" ");
+        if(count%6==0)console.log("\n");
+    }
+    ```
+26. ```javascript
+    var mons=[31,28,31,30,31,30,31,31,30,31,30,31];
+    if(year%400==0||year%4==0&year%100!=0)mons[1]++;
+    var all=0;
+    for (let i = 0; i < mon; i++) {
+        all+=mons[i];
+    }
+    all+=day;
+    console.log(all);
+    ```
